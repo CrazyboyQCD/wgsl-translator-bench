@@ -48,13 +48,18 @@ jobs:
           key: dawn-build-v2-${{ runner.os }}-${{ steps.corpus.outputs.commit }}
           restore-keys: dawn-build-v2-${{ runner.os }}-
 
+      - name: Build Tint (tint CLI + tint_benchmark)
+        run: bash scripts/build_tint.sh
+
+      - name: Build naga bench binaries
+        working-directory: naga-bench
+        run: cargo build --release --benches
+
       - name: Naga bench (criterion, per-shader per-stage)
         run: |
           cd naga-bench
           cargo bench --bench translate -- \
             --warm-up-time 1 --measurement-time ${{ inputs.measurement_seconds || 2 }} --noplot
-      - name: Build Tint (tint CLI + tint_benchmark)
-        run: bash scripts/build_tint.sh
 
       - name: Tint bench (google benchmark -> JSON)
         working-directory: ${{ github.workspace }}/external/dawn
