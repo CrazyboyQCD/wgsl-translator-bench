@@ -16,7 +16,7 @@ if [ ! -d "$DAWN_DIR/.git" ]; then
   git clone --depth 1 --branch "$DAWN_REF" https://github.com/google/dawn "$DAWN_DIR"
 fi
 DAWN_COMMIT=$(git -C "$DAWN_DIR" rev-parse HEAD)
-mkdir -p results
+mkdir -p results corpus/official
 echo "dawn commit: $DAWN_COMMIT"
 echo "$DAWN_COMMIT" > results/dawn-commit.txt
 cp "$DAWN_DIR"/test/tint/benchmark/*.wgsl corpus/official/
