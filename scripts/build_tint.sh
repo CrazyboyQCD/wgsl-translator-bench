@@ -54,5 +54,11 @@ cmake -B out -G Ninja -DCMAKE_MAKE_PROGRAM="$NINJA" \
   -DDAWN_ENABLE_NULL=OFF \
   -DDAWN_SUPPORTS_GLFW_FOR_WINDOWING=OFF
 
-cmake --build out --target tint tint_benchmark
+# ninja targets are the output file names, not cmake target names
+EXT=.exe
+case "$(uname -s)" in
+  MINGW*|MSYS*|CYGWIN*) ;;
+  *) EXT= ;;
+esac
+cmake --build out --target "tint$EXT" "tint_benchmark$EXT"
 echo BUILD_DONE
