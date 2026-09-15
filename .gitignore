@@ -1,0 +1,12 @@
+# build outputs
+external/
+scripts/external/
+naga-bench/target/
+results/out/
+results/tint.json
+**/__pycache__/
+
+# local IDE
+.vscode/
+.idea/
+corpus/official/

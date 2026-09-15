@@ -1,0 +1,22 @@
+[package]
+name = "naga-bench"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+naga = { version = "30", features = ["wgsl-in", "spv-out", "hlsl-out", "msl-out"] }
+
+[dev-dependencies]
+criterion = "0.5"
+
+[[bin]]
+name = "naga-bench"
+path = "src/main.rs"
+
+[[bench]]
+name = "translate"
+harness = false
+
+[profile.release]
+lto = "thin"
+codegen-units = 1

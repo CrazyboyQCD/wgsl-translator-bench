@@ -1,0 +1,289 @@
+shader	engine	target	ok	bytes_or_error
+atan2-const-eval	naga	spv	OK	60492
+atan2-const-eval	tint	spv	OK	68484
+atan2-const-eval	naga	hlsl	OK	47666
+atan2-const-eval	tint	hlsl	OK	37953
+atan2-const-eval	naga	msl	OK	0
+atan2-const-eval	tint	msl	OK	69789
+cluster-lights	naga	spv	OK	8112
+cluster-lights	tint	spv	OK	8460
+cluster-lights	naga	hlsl	OK	6495
+cluster-lights	tint	hlsl	OK	3916
+cluster-lights	naga	msl	OK	0
+cluster-lights	tint	msl	OK	6639
+metaball-isosurface	naga	spv	OK	12512
+metaball-isosurface	tint	spv	OK	16804
+metaball-isosurface	naga	hlsl	OK	10807
+metaball-isosurface	tint	hlsl	OK	8870
+metaball-isosurface	naga	msl	OK	0
+metaball-isosurface	tint	msl	OK	14456
+particles	naga	spv	OK	9584
+particles	tint	spv	FAIL	Emitting to a file but the module has multiple entry points. Please provide the `--ep <name>` option to specific the ent
+particles	naga	hlsl	OK	8005
+particles	tint	hlsl	FAIL	Emitting to a file but the module has multiple entry points. Please provide the `--ep <name>` option to specific the ent
+particles	naga	msl	OK	0
+particles	tint	msl	FAIL	Emitting to a file but the module has multiple entry points. Please provide the `--ep <name>` option to specific the ent
+shadow-fragment	naga	spv	OK	3264
+shadow-fragment	tint	spv	OK	3216
+shadow-fragment	naga	hlsl	OK	3070
+shadow-fragment	tint	hlsl	OK	1858
+shadow-fragment	naga	msl	OK	0
+shadow-fragment	tint	msl	OK	3296
+skinned-shadowed-pbr-fragment	naga	spv	OK	20628
+skinned-shadowed-pbr-fragment	tint	spv	OK	27136
+skinned-shadowed-pbr-fragment	naga	hlsl	OK	18551
+skinned-shadowed-pbr-fragment	tint	hlsl	OK	15029
+skinned-shadowed-pbr-fragment	naga	msl	OK	0
+skinned-shadowed-pbr-fragment	tint	msl	OK	21169
+skinned-shadowed-pbr-vertex	naga	spv	OK	6476
+skinned-shadowed-pbr-vertex	tint	spv	OK	8508
+skinned-shadowed-pbr-vertex	naga	hlsl	OK	4962
+skinned-shadowed-pbr-vertex	tint	hlsl	OK	5086
+skinned-shadowed-pbr-vertex	naga	msl	OK	0
+skinned-shadowed-pbr-vertex	tint	msl	OK	6972
+uniformity-analysis-pointer-parameters	naga	spv	OK	30920
+uniformity-analysis-pointer-parameters	tint	spv	OK	52068
+uniformity-analysis-pointer-parameters	naga	hlsl	OK	37129
+uniformity-analysis-pointer-parameters	tint	hlsl	OK	23205
+uniformity-analysis-pointer-parameters	naga	msl	OK	0
+uniformity-analysis-pointer-parameters	tint	msl	OK	31679
+unity_webgpu_0000017E9E2D81A0.vs.spv	naga	spv	OK	58212
+unity_webgpu_0000017E9E2D81A0.vs.spv	tint	spv	OK	70816
+unity_webgpu_0000017E9E2D81A0.vs.spv	naga	hlsl	OK	60912
+unity_webgpu_0000017E9E2D81A0.vs.spv	tint	hlsl	OK	34703
+unity_webgpu_0000017E9E2D81A0.vs.spv	naga	msl	OK	0
+unity_webgpu_0000017E9E2D81A0.vs.spv	tint	msl	OK	68420
+unity_webgpu_0000017E9E2D81A0.vs	naga	spv	OK	73944
+unity_webgpu_0000017E9E2D81A0.vs	tint	spv	OK	98380
+unity_webgpu_0000017E9E2D81A0.vs	naga	hlsl	OK	72193
+unity_webgpu_0000017E9E2D81A0.vs	tint	hlsl	OK	65585
+unity_webgpu_0000017E9E2D81A0.vs	naga	msl	OK	0
+unity_webgpu_0000017E9E2D81A0.vs	tint	msl	OK	104613
+unity_webgpu_000002778DE78280.cs.spv	naga	spv	OK	6284
+unity_webgpu_000002778DE78280.cs.spv	tint	spv	OK	8228
+unity_webgpu_000002778DE78280.cs.spv	naga	hlsl	OK	6100
+unity_webgpu_000002778DE78280.cs.spv	tint	hlsl	OK	4923
+unity_webgpu_000002778DE78280.cs.spv	naga	msl	OK	0
+unity_webgpu_000002778DE78280.cs.spv	tint	msl	OK	9109
+unity_webgpu_000002778DE78280.cs	naga	spv	OK	6972
+unity_webgpu_000002778DE78280.cs	tint	spv	OK	10572
+unity_webgpu_000002778DE78280.cs	naga	hlsl	OK	7214
+unity_webgpu_000002778DE78280.cs	tint	hlsl	OK	7171
+unity_webgpu_000002778DE78280.cs	naga	msl	OK	0
+unity_webgpu_000002778DE78280.cs	tint	msl	OK	12639
+unity_webgpu_000002778F740030.fs.spv	naga	spv	OK	150880
+unity_webgpu_000002778F740030.fs.spv	tint	spv	OK	188208
+unity_webgpu_000002778F740030.fs.spv	naga	hlsl	OK	184084
+unity_webgpu_000002778F740030.fs.spv	tint	hlsl	OK	101365
+unity_webgpu_000002778F740030.fs.spv	naga	msl	OK	0
+unity_webgpu_000002778F740030.fs.spv	tint	msl	OK	174259
+unity_webgpu_000002778F740030.fs	naga	spv	OK	187560
+unity_webgpu_000002778F740030.fs	tint	spv	OK	254980
+unity_webgpu_000002778F740030.fs	naga	hlsl	OK	206979
+unity_webgpu_000002778F740030.fs	tint	hlsl	OK	186792
+unity_webgpu_000002778F740030.fs	naga	msl	OK	0
+unity_webgpu_000002778F740030.fs	tint	msl	OK	273339
+arrays	naga	spv	OK	1232
+arrays	tint	spv	OK	1668
+arrays	naga	hlsl	OK	718
+arrays	tint	hlsl	OK	984
+arrays	naga	msl	OK	0
+arrays	tint	msl	OK	2717
+atomic_add	naga	spv	OK	1004
+atomic_add	tint	spv	OK	1472
+atomic_add	naga	hlsl	OK	528
+atomic_add	tint	hlsl	OK	741
+atomic_add	naga	msl	OK	0
+atomic_add	tint	msl	OK	1962
+branches	naga	spv	OK	1564
+branches	tint	spv	OK	2336
+branches	naga	hlsl	OK	996
+branches	tint	hlsl	OK	1043
+branches	naga	msl	OK	0
+branches	tint	msl	OK	2246
+empty_compute	naga	spv	OK	180
+empty_compute	tint	spv	OK	156
+empty_compute	naga	hlsl	OK	50
+empty_compute	tint	hlsl	OK	45
+empty_compute	naga	msl	OK	0
+empty_compute	tint	msl	OK	115
+loop_accum	naga	spv	OK	1536
+loop_accum	tint	spv	OK	2148
+loop_accum	naga	hlsl	OK	707
+loop_accum	tint	hlsl	OK	1053
+loop_accum	naga	msl	OK	0
+loop_accum	tint	msl	OK	2282
+mat_vec	naga	spv	OK	1512
+mat_vec	tint	spv	OK	1448
+mat_vec	naga	hlsl	OK	829
+mat_vec	tint	hlsl	OK	490
+mat_vec	naga	msl	OK	0
+mat_vec	tint	msl	OK	674
+texture_sample	naga	spv	OK	724
+texture_sample	tint	spv	OK	940
+texture_sample	naga	hlsl	OK	590
+texture_sample	tint	hlsl	OK	435
+texture_sample	naga	msl	OK	0
+texture_sample	tint	msl	OK	888
+uniform_struct	naga	spv	OK	932
+uniform_struct	tint	spv	OK	1656
+uniform_struct	naga	hlsl	OK	337
+uniform_struct	tint	hlsl	OK	677
+uniform_struct	naga	msl	OK	0
+uniform_struct	tint	msl	OK	1575
+torture-big-array	naga	spv	OK	21940
+torture-big-array	tint	spv	OK	21924
+torture-big-array	naga	hlsl	OK	129409
+torture-big-array	tint	hlsl	OK	102295
+torture-big-array	naga	msl	OK	0
+torture-big-array	tint	msl	OK	103585
+torture-big-expr	naga	spv	FAIL	 thread 'main' (11060) has overflowed its stack 
+torture-big-expr	tint	spv	FAIL	corpus/torture/torture-big-expr.wgsl:6:31695 error: reached max expression depth of 512     out[gid.x] = src[gid.x] * 1
+torture-big-expr	naga	hlsl	FAIL	 thread 'main' (16144) has overflowed its stack 
+torture-big-expr	tint	hlsl	FAIL	corpus/torture/torture-big-expr.wgsl:6:31695 error: reached max expression depth of 512     out[gid.x] = src[gid.x] * 1
+torture-big-expr	naga	msl	FAIL	 thread 'main' (13504) has overflowed its stack 
+torture-big-expr	tint	msl	FAIL	corpus/torture/torture-big-expr.wgsl:6:31695 error: reached max expression depth of 512     out[gid.x] = src[gid.x] * 1
+torture-deep-nest	naga	spv	OK	10856
+torture-deep-nest	tint	spv	FAIL	corpus/torture/torture-deep-nest.wgsl:132:261 error: statement nesting depth / chaining length exceeds limit of 127    
+torture-deep-nest	naga	hlsl	OK	48791
+torture-deep-nest	tint	hlsl	FAIL	corpus/torture/torture-deep-nest.wgsl:132:261 error: statement nesting depth / chaining length exceeds limit of 127    
+torture-deep-nest	naga	msl	OK	0
+torture-deep-nest	tint	msl	FAIL	corpus/torture/torture-deep-nest.wgsl:132:261 error: statement nesting depth / chaining length exceeds limit of 127    
+torture-many-bindings	naga	spv	OK	11248
+torture-many-bindings	tint	spv	OK	20256
+torture-many-bindings	naga	hlsl	OK	6521
+torture-many-bindings	tint	hlsl	OK	9497
+torture-many-bindings	naga	msl	OK	0
+torture-many-bindings	tint	msl	OK	14015
+torture-many-functions	naga	spv	FAIL	Could not parse WGSL: error: internal WGSL front end error  = note: Parser recursion limit exceeded 
+torture-many-functions	tint	spv	FAIL	corpus/torture/torture-many-functions.wgsl:304:648 error: maximum parser recursive depth reached     let x = f299(f298(
+torture-many-functions	naga	hlsl	FAIL	Could not parse WGSL: error: internal WGSL front end error  = note: Parser recursion limit exceeded 
+torture-many-functions	tint	hlsl	FAIL	corpus/torture/torture-many-functions.wgsl:304:648 error: maximum parser recursive depth reached     let x = f299(f298(
+torture-many-functions	naga	msl	FAIL	Could not parse WGSL: error: internal WGSL front end error  = note: Parser recursion limit exceeded 
+torture-many-functions	tint	msl	FAIL	corpus/torture/torture-many-functions.wgsl:304:648 error: maximum parser recursive depth reached     let x = f299(f298(
+arrays	naga	spv	OK	1232
+arrays	tint	spv	OK	1668
+arrays	naga	hlsl	OK	718
+arrays	tint	hlsl	OK	984
+arrays	naga	msl	OK	0
+arrays	tint	msl	OK	2717
+atan2-const-eval	naga	spv	OK	60492
+atan2-const-eval	tint	spv	OK	68484
+atan2-const-eval	naga	hlsl	OK	47666
+atan2-const-eval	tint	hlsl	OK	37953
+atan2-const-eval	naga	msl	OK	0
+atan2-const-eval	tint	msl	OK	69789
+atomic_add	naga	spv	OK	1004
+atomic_add	tint	spv	OK	1472
+atomic_add	naga	hlsl	OK	528
+atomic_add	tint	hlsl	OK	741
+atomic_add	naga	msl	OK	0
+atomic_add	tint	msl	OK	1962
+branches	naga	spv	OK	1564
+branches	tint	spv	OK	2336
+branches	naga	hlsl	OK	996
+branches	tint	hlsl	OK	1043
+branches	naga	msl	OK	0
+branches	tint	msl	OK	2246
+cluster-lights	naga	spv	OK	8112
+cluster-lights	tint	spv	OK	8460
+cluster-lights	naga	hlsl	OK	6495
+cluster-lights	tint	hlsl	OK	3916
+cluster-lights	naga	msl	OK	0
+cluster-lights	tint	msl	OK	6639
+empty_compute	naga	spv	OK	180
+empty_compute	tint	spv	OK	156
+empty_compute	naga	hlsl	OK	50
+empty_compute	tint	hlsl	OK	45
+empty_compute	naga	msl	OK	0
+empty_compute	tint	msl	OK	115
+loop_accum	naga	spv	OK	1536
+loop_accum	tint	spv	OK	2148
+loop_accum	naga	hlsl	OK	707
+loop_accum	tint	hlsl	OK	1053
+loop_accum	naga	msl	OK	0
+loop_accum	tint	msl	OK	2282
+mat_vec	naga	spv	OK	1512
+mat_vec	tint	spv	OK	1448
+mat_vec	naga	hlsl	OK	829
+mat_vec	tint	hlsl	OK	490
+mat_vec	naga	msl	OK	0
+mat_vec	tint	msl	OK	674
+metaball-isosurface	naga	spv	OK	12512
+metaball-isosurface	tint	spv	OK	16804
+metaball-isosurface	naga	hlsl	OK	10807
+metaball-isosurface	tint	hlsl	OK	8870
+metaball-isosurface	naga	msl	OK	0
+metaball-isosurface	tint	msl	OK	14456
+particles	naga	spv	OK	9584
+particles	tint	spv	FAIL	Emitting to a file but the module has multiple entry points. Please provide the `--ep <name>` option to specific the ent
+particles	naga	hlsl	OK	8005
+particles	tint	hlsl	FAIL	Emitting to a file but the module has multiple entry points. Please provide the `--ep <name>` option to specific the ent
+particles	naga	msl	OK	0
+particles	tint	msl	FAIL	Emitting to a file but the module has multiple entry points. Please provide the `--ep <name>` option to specific the ent
+shadow-fragment	naga	spv	OK	3264
+shadow-fragment	tint	spv	OK	3216
+shadow-fragment	naga	hlsl	OK	3070
+shadow-fragment	tint	hlsl	OK	1858
+shadow-fragment	naga	msl	OK	0
+shadow-fragment	tint	msl	OK	3296
+skinned-shadowed-pbr-fragment	naga	spv	OK	20628
+skinned-shadowed-pbr-fragment	tint	spv	OK	27136
+skinned-shadowed-pbr-fragment	naga	hlsl	OK	18551
+skinned-shadowed-pbr-fragment	tint	hlsl	OK	15029
+skinned-shadowed-pbr-fragment	naga	msl	OK	0
+skinned-shadowed-pbr-fragment	tint	msl	OK	21169
+skinned-shadowed-pbr-vertex	naga	spv	OK	6476
+skinned-shadowed-pbr-vertex	tint	spv	OK	8508
+skinned-shadowed-pbr-vertex	naga	hlsl	OK	4962
+skinned-shadowed-pbr-vertex	tint	hlsl	OK	5086
+skinned-shadowed-pbr-vertex	naga	msl	OK	0
+skinned-shadowed-pbr-vertex	tint	msl	OK	6972
+texture_sample	naga	spv	OK	724
+texture_sample	tint	spv	OK	940
+texture_sample	naga	hlsl	OK	590
+texture_sample	tint	hlsl	OK	435
+texture_sample	naga	msl	OK	0
+texture_sample	tint	msl	OK	888
+torture-big-array	naga	spv	OK	21940
+torture-big-array	tint	spv	OK	21924
+torture-big-array	naga	hlsl	OK	129409
+torture-big-array	tint	hlsl	OK	102295
+torture-big-array	naga	msl	OK	0
+torture-big-array	tint	msl	OK	103585
+torture-big-expr	naga	spv	FAIL	 thread 'main' (18228) has overflowed its stack 
+torture-big-expr	tint	spv	FAIL	scripts/external/dawn/test/tint/benchmark/torture-big-expr.wgsl:6:31695 error: reached max expression depth of 512     
+torture-big-expr	naga	hlsl	FAIL	 thread 'main' (15456) has overflowed its stack 
+torture-big-expr	tint	hlsl	FAIL	scripts/external/dawn/test/tint/benchmark/torture-big-expr.wgsl:6:31695 error: reached max expression depth of 512     
+torture-big-expr	naga	msl	FAIL	 thread 'main' (16144) has overflowed its stack 
+torture-big-expr	tint	msl	FAIL	scripts/external/dawn/test/tint/benchmark/torture-big-expr.wgsl:6:31695 error: reached max expression depth of 512     
+torture-deep-nest	naga	spv	OK	10856
+torture-deep-nest	tint	spv	FAIL	scripts/external/dawn/test/tint/benchmark/torture-deep-nest.wgsl:132:261 error: statement nesting depth / chaining lengt
+torture-deep-nest	naga	hlsl	OK	48791
+torture-deep-nest	tint	hlsl	FAIL	scripts/external/dawn/test/tint/benchmark/torture-deep-nest.wgsl:132:261 error: statement nesting depth / chaining lengt
+torture-deep-nest	naga	msl	OK	0
+torture-deep-nest	tint	msl	FAIL	scripts/external/dawn/test/tint/benchmark/torture-deep-nest.wgsl:132:261 error: statement nesting depth / chaining lengt
+torture-many-bindings	naga	spv	OK	11248
+torture-many-bindings	tint	spv	OK	20256
+torture-many-bindings	naga	hlsl	OK	6521
+torture-many-bindings	tint	hlsl	OK	9497
+torture-many-bindings	naga	msl	OK	0
+torture-many-bindings	tint	msl	OK	14015
+torture-many-functions	naga	spv	FAIL	Could not parse WGSL: error: internal WGSL front end error  = note: Parser recursion limit exceeded 
+torture-many-functions	tint	spv	FAIL	scripts/external/dawn/test/tint/benchmark/torture-many-functions.wgsl:304:648 error: maximum parser recursive depth reac
+torture-many-functions	naga	hlsl	FAIL	Could not parse WGSL: error: internal WGSL front end error  = note: Parser recursion limit exceeded 
+torture-many-functions	tint	hlsl	FAIL	scripts/external/dawn/test/tint/benchmark/torture-many-functions.wgsl:304:648 error: maximum parser recursive depth reac
+torture-many-functions	naga	msl	FAIL	Could not parse WGSL: error: internal WGSL front end error  = note: Parser recursion limit exceeded 
+torture-many-functions	tint	msl	FAIL	scripts/external/dawn/test/tint/benchmark/torture-many-functions.wgsl:304:648 error: maximum parser recursive depth reac
+uniform_struct	naga	spv	OK	932
+uniform_struct	tint	spv	OK	1656
+uniform_struct	naga	hlsl	OK	337
+uniform_struct	tint	hlsl	OK	677
+uniform_struct	naga	msl	OK	0
+uniform_struct	tint	msl	OK	1575
+uniformity-analysis-pointer-parameters	naga	spv	OK	30920
+uniformity-analysis-pointer-parameters	tint	spv	OK	52068
+uniformity-analysis-pointer-parameters	naga	hlsl	OK	37129
+uniformity-analysis-pointer-parameters	tint	hlsl	OK	23205
+uniformity-analysis-pointer-parameters	naga	msl	OK	0
+uniformity-analysis-pointer-parameters	tint	msl	OK	31679

@@ -1,0 +1,95 @@
+name: bench
+
+on:
+  workflow_dispatch:
+    inputs:
+      dawn_ref:
+        description: Dawn ref to benchmark (branch/tag)
+        default: main
+      measurement_seconds:
+        description: criterion measurement time per bench (s)
+        default: '2'
+
+permissions:
+  contents: read
+
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    env:
+      DAWN_DIR: ${{ github.workspace }}/external/dawn
+      NAGA_BENCH_CORPUS: ${{ github.workspace }}/corpus
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Assemble corpus (clone Dawn)
+        id: corpus
+        run: |
+          bash scripts/setup_corpus.sh
+          echo "commit=$(cat results/dawn-commit.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: Generate tiny/torture corpus
+        run: python scripts/gen_corpus.py
+
+      - name: Cache Dawn deps + build dir
+        uses: actions/cache@v4
+        with:
+          path: |
+            external/dawn/out
+            external/dawn/third_party
+          key: dawn-build-${{ runner.os }}-${{ steps.corpus.outputs.commit }}
+          restore-keys: dawn-build-${{ runner.os }}-
+
+      - name: Naga bench (criterion, per-shader per-stage)
+        run: |
+          cd naga-bench
+          cargo bench --bench translate -- \
+            --warm-up-time 1 --measurement-time ${{ inputs.measurement_seconds || 2 }} --noplot
+      - name: Build Tint (tint CLI + tint_benchmark)
+        run: bash scripts/build_tint.sh
+
+      - name: Tint bench (google benchmark -> JSON)
+        working-directory: ${{ github.workspace }}/external/dawn
+        run: |
+          ./out/tint_benchmark \
+            --benchmark_filter='WGSL/|SPIRV/|HLSL/|MSL/|ValidateIR/' \
+            --benchmark_min_time=0.3s \
+            --benchmark_format=json \
+            --benchmark_out=${{ github.workspace }}/results/tint.json
+
+      - name: Correctness pass (both CLIs)
+        run: bash scripts/verify.sh
+
+      - name: Collect report
+        run: |
+          python scripts/collect.py
+          {
+            echo "run at $(date -u '+%Y-%m-%d %H:%M UTC') on ubuntu-latest"
+            echo "dawn: $(cat results/dawn-commit.txt)"
+          } >> results/report.md
+
+      - name: Publish tables to step summary
+        if: always()
+        run: |
+          [ -f results/report.md ] && cat results/report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bench-results
+          path: |
+            results/report.md
+            results/naga.csv
+            results/tint.csv
+            results/verify.tsv
+            results/tint.json
+            results/dawn-commit.txt
