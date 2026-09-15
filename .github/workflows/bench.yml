@@ -45,8 +45,8 @@ jobs:
           path: |
             external/dawn/out
             external/dawn/third_party
-          key: dawn-build-${{ runner.os }}-${{ steps.corpus.outputs.commit }}
-          restore-keys: dawn-build-${{ runner.os }}-
+          key: dawn-build-v2-${{ runner.os }}-${{ steps.corpus.outputs.commit }}
+          restore-keys: dawn-build-v2-${{ runner.os }}-
 
       - name: Naga bench (criterion, per-shader per-stage)
         run: |

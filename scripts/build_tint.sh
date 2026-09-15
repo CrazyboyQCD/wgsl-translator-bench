@@ -29,10 +29,9 @@ else
 fi
 echo "ninja: $NINJA / CC=$CC"
 
-# third-party deps (abseil, google-benchmark, ...) are fetched once and cached
-if [ ! -d third_party/abseil-cpp ]; then
-  python tools/fetch_dawn_dependencies.py
-fi
+# third-party deps: always run the fetcher — it is idempotent (skips deps
+# already at the pinned sha) and repairs partial fetches restored from cache
+python tools/fetch_dawn_dependencies.py
 
 cmake -B out -G Ninja -DCMAKE_MAKE_PROGRAM="$NINJA" \
   -DCMAKE_BUILD_TYPE=Release \

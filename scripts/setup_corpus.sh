@@ -22,10 +22,9 @@ echo "$DAWN_COMMIT" > results/dawn-commit.txt
 cp "$DAWN_DIR"/test/tint/benchmark/*.wgsl corpus/official/
 cp "$DAWN_DIR"/third_party/benchmark_shaders/*/*.wgsl corpus/official/ 2>/dev/null || true
 
-# keep the tint in-tree corpus in sync so tint_benchmark sees the same set
-# (its shader list is embedded at build time via a generated header)
-cp corpus/official/*.wgsl corpus/tiny/*.wgsl corpus/torture/*.wgsl \
-   "$DAWN_DIR/test/tint/benchmark/" 2>/dev/null || true
-
+# NOTE: do NOT copy tiny/torture into the Dawn tree — tint_benchmark asserts
+# and dies on shaders its compiler rejects (torture tests), which would kill
+# the whole benchmark run. The report aligns the two engines on the official
+# corpus intersection; torture results live in the correctness matrix only.
 n_total=$(find corpus -name '*.wgsl' | wc -l)
 echo "corpus assembled: $n_total wgsl files"
