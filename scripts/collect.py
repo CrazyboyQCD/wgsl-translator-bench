@@ -134,25 +134,59 @@ def main():
 
     # merge on (shader, stage)
     tint_map = {(r["shader"], r["stage"]): r["median_us"] for r in tint_rows}
-    stages = ["parse", "validate", "spv", "gen_spv", "hlsl", "gen_hlsl", "msl", "gen_msl"]
+    naga_map = {(r["shader"], r["stage"]): r["median_us"] for r in naga}
+    shaders = sorted({r["shader"] for r in naga} & {r["shader"] for r in tint_rows})
+
+    # --- end-to-end view (the fair comparison) ---
+    # naga e2e   = <tgt>_full bench        (parse + validate + write, one shot)
+    # tint e2e   = ParseWGSL + ValidateIR + Generate*   (sum of its stages)
     lines = [
         "# Naga vs Tint translation benchmark",
         "",
         "- Platform: Windows, in-process timing; naga 30.0.1 (criterion, median),",
         "  tint @ Dawn main (google benchmark, mean over iterations)",
-        "- `spv/hlsl/msl` = naga writer-only; `gen_*` = tint Generate* benches",
-        "  (includes AST->IR lowering before the writer; parse is pre-cached)",
-        "- `parse` on both sides includes semantic/IR construction internal to each",
-        "  compiler; `validate` compares naga WGSL validation vs tint IR validation",
-        "  (different layers - indicative only)",
+        "",
+        "## End-to-end (WGSL parse -> target output, same pipeline on both sides)",
+        "",
+        "- naga `e2e_*` = `<target>_full` bench; tint = sum of its",
+        "  ParseWGSL + ValidateIR + Generate* benches (all three are",
+        "  successive stages of the same pipeline).",
+        "",
+        "| shader | target | naga e2e (us) | tint e2e (us) | naga/tint |",
+        "|---|---|---:|---:|---:|",
+    ]
+    e2e_ratios = {"spv": [], "hlsl": [], "msl": []}
+    for s in shaders:
+        for tgt in ("spv", "hlsl", "msl"):
+            n = naga_map.get((s, f"{tgt}_full"))
+            t = tint_map.get((s, "parse"))
+            v = tint_map.get((s, "validate"))
+            g = tint_map.get((s, f"gen_{tgt}"))
+            if n is None or t is None or v is None or g is None:
+                continue
+            e2e = t + v + g
+            e2e_ratios[tgt].append(n / e2e)
+            lines.append(f"| {s} | {tgt} | {n:.1f} | {e2e:.1f} | {n / e2e:.2f}x |")
+    for tgt, ratios in e2e_ratios.items():
+        if ratios:
+            geo = (__import__("math").prod(ratios)) ** (1 / len(ratios))
+            lines.append(f"| **GEOMEAN** | {tgt} | — | — | **{geo:.2f}x** |")
+
+    # --- per-stage breakdown (attribution view; NOT apples-to-apples) ---
+    lines += [
+        "",
+        "## Per-stage breakdown (attribution only, stages are not equivalent)",
+        "",
+        "- naga `spv/hlsl/msl` = writer-only; tint `gen_*` = IR lowering + writer",
+        "  (parse pre-cached) — the writer rows are NOT the same workload.",
+        "- `validate`: naga WGSL validation vs tint IR validation (different layers).",
         "",
         "| shader | stage | naga (us) | tint (us) | naga/tint |",
         "|---|---|---:|---:|---:|",
     ]
-    shaders = sorted({r["shader"] for r in naga} & {r["shader"] for r in tint_rows})
     for s in shaders:
-        for st in stages:
-            n = next((r["median_us"] for r in naga if r["shader"] == s and r["stage"] == st), None)
+        for st in ("parse", "validate", "spv", "gen_spv", "hlsl", "gen_hlsl", "msl", "gen_msl"):
+            n = naga_map.get((s, st))
             t = tint_map.get((s, st))
             if n is None or t is None:
                 continue

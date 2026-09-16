@@ -175,6 +175,41 @@ fn bench_translate(c: &mut Criterion) {
                 })
             });
         }
+
+        // End-to-end (parse + validate + write) — aligns with tint's
+        // ParseWGSL + ValidateIR + Generate* pipeline for fair totals.
+        if spv_ok {
+            group.bench_function(BenchmarkId::new("spv_full", name), |b| {
+                b.iter(|| {
+                    let module = naga::front::wgsl::parse_str(black_box(&src)).unwrap();
+                    let info = validator().validate(black_box(&module)).unwrap();
+                    naga::back::spv::write_vec(&module, &info, &spv_opts, None).unwrap()
+                })
+            });
+        }
+
+        if hlsl_ok {
+            group.bench_function(BenchmarkId::new("hlsl_full", name), |b| {
+                b.iter(|| {
+                    let module = naga::front::wgsl::parse_str(black_box(&src)).unwrap();
+                    let info = validator().validate(black_box(&module)).unwrap();
+                    let mut out = String::new();
+                    let mut writer =
+                        naga::back::hlsl::Writer::new(&mut out, &hlsl_opts, &hlsl_pipe);
+                    writer.write(&module, &info, None).unwrap();
+                })
+            });
+        }
+
+        if msl_ok {
+            group.bench_function(BenchmarkId::new("msl_full", name), |b| {
+                b.iter(|| {
+                    let module = naga::front::wgsl::parse_str(black_box(&src)).unwrap();
+                    let info = validator().validate(black_box(&module)).unwrap();
+                    naga::back::msl::write_string(&module, &info, &msl_opts, &msl_pipe).unwrap()
+                })
+            });
+        }
     }
     group.finish();
 }
