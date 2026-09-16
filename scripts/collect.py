@@ -98,13 +98,18 @@ def tint_stage(name):
 
 
 def shader_of(name, corpus_names):
-    """Find corpus shader stem mentioned in the bench name."""
+    """Find corpus shader stem mentioned in the bench name.
+
+    Returns the corpus name with its on-disk casing (naga keeps the original
+    file-stem case while tint lowercases bench names, so matching is done
+    case-insensitively but the merged key stays consistent with naga rows).
+    """
     low = name.lower()
     best = None
     for c in corpus_names:
         cl = c.lower()
         if cl in low and (best is None or len(cl) > len(best)):
-            best = cl
+            best = c
     return best
 
 
