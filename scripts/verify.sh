@@ -44,7 +44,11 @@ run_tint() {
     record "$(basename "$f" .wgsl)" tint "$target" OK "$(stat -c%s "$base")"
   elif echo "$err" | grep -q "multiple entry points"; then
     local ep
-    ep=$(grep -oE '@(compute|vertex|fragment)[a-z_]*[[:space:]]+fn[[:space:]]+\w+' "$f" | head -1 | grep -oE '\w+$')
+    # first annotated fn: attribute line(s) may not hold the fn itself
+    ep=$(awk '/@(compute|vertex|fragment)/{p=1}
+              p && /fn[ \t]+/ { line=$0; sub(/.*fn[ \t]+/, "", line)
+                               sub(/[^A-Za-z0-9_].*$/, "", line)
+                               if (line != "") { print line; exit } }' "$f")
     if err=$("$TINT_BIN" "$f" --format "$fmt" --entry-point "$ep" -o "$base" 2>&1); then
       record "$(basename "$f" .wgsl)" tint "$target" OK "$(stat -c%s "$base") [ep=$ep]"
     else
