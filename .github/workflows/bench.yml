@@ -48,6 +48,12 @@ jobs:
           key: dawn-build-v2-${{ runner.os }}-${{ steps.corpus.outputs.commit }}
           restore-keys: dawn-build-v2-${{ runner.os }}-
 
+      - name: Cache naga CLI
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/bin/naga
+          key: naga-cli-${{ runner.os }}-${{ hashFiles('naga-bench/Cargo.lock') }}
+
       - name: Build Tint (tint CLI + tint_benchmark)
         run: bash scripts/build_tint.sh
 
@@ -56,7 +62,7 @@ jobs:
         run: cargo build --release --benches
 
       - name: Install naga CLI (correctness pass)
-        run: cargo install naga-cli --locked
+        run: command -v naga >/dev/null 2>&1 || cargo install naga-cli --locked
 
       - name: Naga bench (criterion, per-shader per-stage)
         run: |
