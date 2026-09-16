@@ -9,4 +9,5 @@ results/tint.json
 # local IDE
 .vscode/
 .idea/
+tmp/
 corpus/official/
