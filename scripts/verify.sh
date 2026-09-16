@@ -36,12 +36,20 @@ run_naga() {
   fi
 }
 
-# tint <input> --format <fmt> -o <name>
+# tint <input> --format <fmt> -o <name>  (retries with --ep on multi-entry modules)
 run_tint() {
   local f="$1" target="$2" fmt="$3"
   local base="results/out/$(basename "$f" .wgsl).tint.$target"
   if err=$("$TINT_BIN" "$f" --format "$fmt" -o "$base" 2>&1); then
     record "$(basename "$f" .wgsl)" tint "$target" OK "$(stat -c%s "$base")"
+  elif echo "$err" | grep -q "multiple entry points"; then
+    local ep
+    ep=$(grep -oE '@(compute|vertex|fragment)[a-z_]*[[:space:]]+fn[[:space:]]+\w+' "$f" | head -1 | grep -oE '\w+$')
+    if err=$("$TINT_BIN" "$f" --format "$fmt" --ep "$ep" -o "$base" 2>&1); then
+      record "$(basename "$f" .wgsl)" tint "$target" OK "$(stat -c%s "$base") [ep=$ep]"
+    else
+      record "$(basename "$f" .wgsl)" tint "$target" FAIL "$(echo "$err" | tr '\n\t' '  ' | head -c 120)"
+    fi
   else
     record "$(basename "$f" .wgsl)" tint "$target" FAIL "$(echo "$err" | tr '\n\t' '  ' | head -c 120)"
   fi

@@ -1,0 +1,163 @@
+shader	engine	target	ok	bytes_or_error
+atan2-const-eval	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+atan2-const-eval	tint	spv	OK	68516
+atan2-const-eval	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+atan2-const-eval	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+atan2-const-eval	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+atan2-const-eval	tint	msl	OK	68759
+cluster-lights	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+cluster-lights	tint	spv	OK	8460
+cluster-lights	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+cluster-lights	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+cluster-lights	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+cluster-lights	tint	msl	OK	6463
+metaball-isosurface	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+metaball-isosurface	tint	spv	OK	16804
+metaball-isosurface	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+metaball-isosurface	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+metaball-isosurface	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+metaball-isosurface	tint	msl	OK	14157
+particles	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+particles	tint	spv	FAIL	Emitting to a file but the module has multiple entry points. Please provide the `--ep <name>` option to specific the ent
+particles	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+particles	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+particles	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+particles	tint	msl	FAIL	Emitting to a file but the module has multiple entry points. Please provide the `--ep <name>` option to specific the ent
+shadow-fragment	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+shadow-fragment	tint	spv	OK	3216
+shadow-fragment	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+shadow-fragment	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+shadow-fragment	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+shadow-fragment	tint	msl	OK	3210
+skinned-shadowed-pbr-fragment	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+skinned-shadowed-pbr-fragment	tint	spv	OK	27136
+skinned-shadowed-pbr-fragment	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+skinned-shadowed-pbr-fragment	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+skinned-shadowed-pbr-fragment	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+skinned-shadowed-pbr-fragment	tint	msl	OK	20738
+skinned-shadowed-pbr-vertex	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+skinned-shadowed-pbr-vertex	tint	spv	OK	8508
+skinned-shadowed-pbr-vertex	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+skinned-shadowed-pbr-vertex	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+skinned-shadowed-pbr-vertex	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+skinned-shadowed-pbr-vertex	tint	msl	OK	6835
+uniformity-analysis-pointer-parameters	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+uniformity-analysis-pointer-parameters	tint	spv	OK	52068
+uniformity-analysis-pointer-parameters	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+uniformity-analysis-pointer-parameters	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+uniformity-analysis-pointer-parameters	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+uniformity-analysis-pointer-parameters	tint	msl	OK	31125
+unity_webgpu_0000017E9E2D81A0.vs.spv	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+unity_webgpu_0000017E9E2D81A0.vs.spv	tint	spv	OK	70816
+unity_webgpu_0000017E9E2D81A0.vs.spv	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+unity_webgpu_0000017E9E2D81A0.vs.spv	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+unity_webgpu_0000017E9E2D81A0.vs.spv	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+unity_webgpu_0000017E9E2D81A0.vs.spv	tint	msl	OK	67452
+unity_webgpu_0000017E9E2D81A0.vs	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+unity_webgpu_0000017E9E2D81A0.vs	tint	spv	OK	98380
+unity_webgpu_0000017E9E2D81A0.vs	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+unity_webgpu_0000017E9E2D81A0.vs	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+unity_webgpu_0000017E9E2D81A0.vs	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+unity_webgpu_0000017E9E2D81A0.vs	tint	msl	OK	102839
+unity_webgpu_000002778DE78280.cs.spv	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+unity_webgpu_000002778DE78280.cs.spv	tint	spv	OK	8228
+unity_webgpu_000002778DE78280.cs.spv	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+unity_webgpu_000002778DE78280.cs.spv	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+unity_webgpu_000002778DE78280.cs.spv	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+unity_webgpu_000002778DE78280.cs.spv	tint	msl	OK	8961
+unity_webgpu_000002778DE78280.cs	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+unity_webgpu_000002778DE78280.cs	tint	spv	OK	10572
+unity_webgpu_000002778DE78280.cs	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+unity_webgpu_000002778DE78280.cs	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+unity_webgpu_000002778DE78280.cs	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+unity_webgpu_000002778DE78280.cs	tint	msl	OK	12405
+unity_webgpu_000002778F740030.fs.spv	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+unity_webgpu_000002778F740030.fs.spv	tint	spv	OK	188208
+unity_webgpu_000002778F740030.fs.spv	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+unity_webgpu_000002778F740030.fs.spv	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+unity_webgpu_000002778F740030.fs.spv	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+unity_webgpu_000002778F740030.fs.spv	tint	msl	OK	172117
+unity_webgpu_000002778F740030.fs	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+unity_webgpu_000002778F740030.fs	tint	spv	OK	254980
+unity_webgpu_000002778F740030.fs	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+unity_webgpu_000002778F740030.fs	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+unity_webgpu_000002778F740030.fs	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+unity_webgpu_000002778F740030.fs	tint	msl	OK	269085
+arrays	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+arrays	tint	spv	OK	1668
+arrays	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+arrays	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+arrays	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+arrays	tint	msl	OK	2656
+atomic_add	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+atomic_add	tint	spv	OK	1472
+atomic_add	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+atomic_add	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+atomic_add	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+atomic_add	tint	msl	OK	1922
+branches	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+branches	tint	spv	OK	2336
+branches	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+branches	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+branches	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+branches	tint	msl	OK	2174
+empty_compute	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+empty_compute	tint	spv	OK	156
+empty_compute	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+empty_compute	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+empty_compute	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+empty_compute	tint	msl	OK	109
+loop_accum	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+loop_accum	tint	spv	OK	2148
+loop_accum	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+loop_accum	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+loop_accum	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+loop_accum	tint	msl	OK	2226
+mat_vec	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+mat_vec	tint	spv	OK	1448
+mat_vec	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+mat_vec	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+mat_vec	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+mat_vec	tint	msl	OK	648
+texture_sample	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+texture_sample	tint	spv	OK	940
+texture_sample	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+texture_sample	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+texture_sample	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+texture_sample	tint	msl	OK	861
+uniform_struct	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+uniform_struct	tint	spv	OK	1656
+uniform_struct	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+uniform_struct	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+uniform_struct	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+uniform_struct	tint	msl	OK	1530
+torture-big-array	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+torture-big-array	tint	spv	OK	21924
+torture-big-array	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+torture-big-array	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+torture-big-array	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+torture-big-array	tint	msl	OK	103535
+torture-big-expr	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+torture-big-expr	tint	spv	FAIL	corpus/torture/torture-big-expr.wgsl:6:31695 error: reached max expression depth of 512     out[gid.x] = src[gid.x] * 1.
+torture-big-expr	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+torture-big-expr	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+torture-big-expr	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+torture-big-expr	tint	msl	FAIL	corpus/torture/torture-big-expr.wgsl:6:31695 error: reached max expression depth of 512     out[gid.x] = src[gid.x] * 1.
+torture-deep-nest	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+torture-deep-nest	tint	spv	FAIL	corpus/torture/torture-deep-nest.wgsl:132:261 error: statement nesting depth / chaining length exceeds limit of 127     
+torture-deep-nest	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+torture-deep-nest	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+torture-deep-nest	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+torture-deep-nest	tint	msl	FAIL	corpus/torture/torture-deep-nest.wgsl:132:261 error: statement nesting depth / chaining length exceeds limit of 127     
+torture-many-bindings	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+torture-many-bindings	tint	spv	OK	20256
+torture-many-bindings	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+torture-many-bindings	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+torture-many-bindings	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+torture-many-bindings	tint	msl	OK	13884
+torture-many-functions	naga	spv	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+torture-many-functions	tint	spv	FAIL	corpus/torture/torture-many-functions.wgsl:304:648 error: maximum parser recursive depth reached     let x = f299(f298(f
+torture-many-functions	naga	hlsl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+torture-many-functions	tint	hlsl	FAIL	invalid value 'hlsl' for option '--format' Must be one of: none, wgsl, ir, spirv, spvasm, msl Usage: tint [options] <inp
+torture-many-functions	naga	msl	FAIL	scripts/verify.sh: line 32: /home/runner/.cargo/bin/naga: No such file or directory 
+torture-many-functions	tint	msl	FAIL	corpus/torture/torture-many-functions.wgsl:304:648 error: maximum parser recursive depth reached     let x = f299(f298(f

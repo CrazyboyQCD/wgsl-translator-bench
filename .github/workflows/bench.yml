@@ -55,6 +55,9 @@ jobs:
         working-directory: naga-bench
         run: cargo build --release --benches
 
+      - name: Install naga CLI (correctness pass)
+        run: cargo install naga-cli --locked
+
       - name: Naga bench (criterion, per-shader per-stage)
         run: |
           cd naga-bench
