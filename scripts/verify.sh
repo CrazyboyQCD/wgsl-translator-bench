@@ -45,7 +45,7 @@ run_tint() {
   elif echo "$err" | grep -q "multiple entry points"; then
     local ep
     ep=$(grep -oE '@(compute|vertex|fragment)[a-z_]*[[:space:]]+fn[[:space:]]+\w+' "$f" | head -1 | grep -oE '\w+$')
-    if err=$("$TINT_BIN" "$f" --format "$fmt" --ep "$ep" -o "$base" 2>&1); then
+    if err=$("$TINT_BIN" "$f" --format "$fmt" --entry-point "$ep" -o "$base" 2>&1); then
       record "$(basename "$f" .wgsl)" tint "$target" OK "$(stat -c%s "$base") [ep=$ep]"
     else
       record "$(basename "$f" .wgsl)" tint "$target" FAIL "$(echo "$err" | tr '\n\t' '  ' | head -c 120)"
